@@ -1,0 +1,160 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+  background-color: #f0f4f8;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+header {
+  width: 100%;
+  background-color: #2b3a4a;
+  color: #ffffff;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 22px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+
+nav {
+  width: 100%;
+  background-color: #1e2732;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 12px 0;
+}
+
+nav a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+
+.section-title {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+
+.demo-container {
+  width: 90%;
+  max-width: 700px;
+  height: 250px;
+  border-top: 2px dashed #cbd5e0;
+  border-bottom: 2px dashed #cbd5e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+}
+
+
+.box {
+  width: 180px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  user-select: none;
+}
+
+
+.box-before {
+  background-color: #4a5568;
+}
+
+.box-before:hover {
+  transform: scale(1.05);
+}
+
+
+.box-after {
+  background-color: #dd6b20;
+  transform: rotate(-10deg);
+  cursor: grab;
+}
+
+.box-after:hover {
+  transform: rotate(15deg) scale(1.08);
+  background-color: #c05621;
+}
+
+.box-after:active {
+  cursor: grabbing;
+  transform: rotate(180deg) scale(1.15);
+  background-color: #319795;
+}
+
+/* Bottom Controls */
+.controls {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+
+.btn {
+  background-color: #3182ce;
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+
+#btnTranslate:hover ~ .demo-container .box-before,
+#btnTranslate:hover ~ .demo-container .box-after {
+  transform: translateY(-20px);
+}
+
+#btnRotate:hover ~ .demo-container .box-after {
+  transform: rotate(360deg);
+}
